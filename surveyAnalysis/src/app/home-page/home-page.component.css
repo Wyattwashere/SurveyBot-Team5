@@ -1,0 +1,44 @@
+.survey{
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.survey:hover{
+  background-color: #e7e7e7;
+}
+
+h1{
+  padding: 16px;
+  float: center;
+  left: 50%;
+}
+
+h2{
+  margin: 2px;
+  padding: 16px;
+
+}
+
+li{
+  float: left;
+  padding: 16px 4px;
+}
+
+#survey{
+  float: left;
+}
+
+.input-group{
+  left: 16px;
+}

@@ -1,0 +1,153 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.body {
+  height: 100%;
+  background-color: #54585A;
+}
+
+.header {
+  color: white;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: auto;
+  text-align: center;
+  font-size: 32pt;
+
+  background-color: #800000;
+}
+
+.mainpane {
+
+  align-self: center;
+
+  background-color: white;
+
+  padding-top: 5em;
+  padding-bottom: 5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.row {
+  left: 50%;
+  right: 50%;
+
+  align-self: center;
+}
+
+#visual {
+  height: 50%;
+  width: 75%;
+}
+
+.card {
+  align-self: center;
+  /* left: 50%; */
+  /* right: 50%; */
+  color: white;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 2px #54585A solid;
+  background-color: #54585A;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  -o-border-radius:10px;
+}
+
+.card>input {
+  width: 50%;
+}
+
+.card>.diagram{
+    width: 100%;
+}
+
+#error{
+    text-align: center;
+}
+
+.delSurvey {
+  text-align: center;
+}
+
+.delSurvButton {
+  position: absolute;
+}
+
+button {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover, .close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

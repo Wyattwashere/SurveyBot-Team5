@@ -1,0 +1,20 @@
+<button type="button" (click)="onClick()">
+    Show Sentiment
+</button>
+<div class='comment'>
+  <ul
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    #comment="cdkDropList"
+    [cdkDropListData]="startingPoint"
+    class="dragDrop"
+    (cdkDropListDropped)="drop($event)">
+      <li class="tags" *ngFor="let item of startingPoint" cdkDrag cdkDrop>{{item}}</li>
+      <li *ngFor="let comment of comments">
+        <span>
+          <b>{{comment.question}}</b>
+          <app-comment [inputComment]="comment"></app-comment>
+        </span>
+    </li>
+</ul>
+</div>

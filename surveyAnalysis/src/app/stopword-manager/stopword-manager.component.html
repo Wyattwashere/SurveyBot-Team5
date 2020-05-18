@@ -1,0 +1,38 @@
+<div>
+  <div id="title">
+    <span><h2> Stopwords </h2><button id="toggler" type="button" (click)="toggle()">Toggle</button></span>
+  </div>
+
+  <div *ngIf="shown">
+
+  <div class="row">
+      <div class="col-xs-6 col-md-4">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="enter word" id="txtSearch" [(ngModel)]="newWord" />
+              <div class="input-group-btn">
+                  <button class="btn btn-primary" type="button" (click)="onClick()">
+                    <i class="navbar-toggler-icon fa fa-plus"></i>
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <br />
+
+  <div class="stop-words">
+  <ul class="list-group">
+      <li *ngFor="let sWord of words">
+          <span> {{ sWord }} </span>
+          <!-- <i (click)="onEdit(tag)" class="navbar-toggler-icon fa fa-edit"></i> -->
+          <!-- <i (click)="onDelete(tag)" class="navbar-toggler-icon fa fa-trash floatright paddingLeft"></i> -->
+      </li>
+  </ul>
+  </div>
+
+</div>
+
+
+
+</div>
+

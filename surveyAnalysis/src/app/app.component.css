@@ -1,0 +1,75 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.body {
+  height: 100%;
+
+  background-color: #54585A;
+}
+
+.header {
+  color: white;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: auto;
+  text-align: center;
+  font-size: 32pt;
+
+  background-color: #800000;
+}
+
+.mainpane {
+
+  align-self: center;
+
+  background-color: white;
+
+  padding-top: 5em;
+  padding-bottom: 5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.row {
+  left: 50%;
+  right: 50%;
+
+  align-self: center;
+}
+
+.card {
+  align-self: center;
+  /* left: 50%; */
+  /* right: 50%; */
+  color: white;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 2px #54585A solid;
+  background-color: #54585A;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  -o-border-radius:10px;
+}
+
+.card>input {
+  width: 50%;
+}
+
+.card>.diagram{
+    width: 100%;
+}
+
+#error{
+    text-align: center;
+}

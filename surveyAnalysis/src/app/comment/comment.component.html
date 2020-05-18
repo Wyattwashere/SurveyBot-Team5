@@ -1,0 +1,55 @@
+<div>
+  <div class='sentiment'>
+
+    <div *ngIf="sentimentShown">
+      <div class='score'>
+        Score: {{ results.score }}
+      </div>
+      <div class='pos'>
+        Positive: {{ results.positive }}
+      </div>
+      <div class ='neg'>
+        Negative: {{ results.negative }}
+      </div>
+      <div>
+        Key Words: <div class="keys" *ngFor="let key of keys" cdkDrag cdkDrop>
+        {{key}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='tagging'>
+    <div>
+      Tags: <div class="tags" *ngFor="let tag of tags" cdkDrag cdkDrop>
+      {{tag.name}}
+      </div>
+    </div>
+    <i (click)="onClickDelete('tagDelete')" class="navbar-toggler-icon fa fa-trash"></i>
+  </div>
+
+  <jw-modal id={{delTagModal}}>
+    <h3>Remove tag?</h3>
+
+      <li *ngFor="let cTag of tags" (click)="deleteTag(cTag)">
+          <span> {{ cTag.name }} </span>
+      </li>
+    <!-- <button (click)="closeModal('tagDelete');">Close</button> -->
+  </jw-modal>
+
+  <jw-modal id={{addTagModal}}>
+    <h3>Add Tags to Comment</h3>
+      <li *ngFor="let sTag of surveyTags" (click)="addTag(sTag)">
+          <span> {{ sTag.name }} </span>
+      </li>
+  </jw-modal>
+
+  <div class='comment' (click)='onClickAdd()'>
+    <div>
+      <p>
+          {{inputComment.response}}
+      </p>
+    </div>
+  </div>
+
+</div>

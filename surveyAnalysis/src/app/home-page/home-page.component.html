@@ -1,0 +1,27 @@
+<div>
+<h1>Home Page</h1>
+</div>
+<body>
+<div style="text-align:center" class="row">
+<ul>
+  <li (click)="onSelect(survey)" *ngFor="let survey of surveys" style="list-style-type:none">
+    <button class="survey">{{survey.name}}</button>
+  </li>
+</ul>
+</div>
+  <h2> Create a new survey </h2>
+  <div class="row">
+    <div class="col-xs-2 col-md-2">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="enter survey name" id="txtSearch" [(ngModel)]="survey.name" />
+            <div class="input-group-btn">
+                <button class="btn btn-primary" type="button" (click)="onAdd()">
+                  <i class="navbar-toggler-icon fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+</body>
+
+

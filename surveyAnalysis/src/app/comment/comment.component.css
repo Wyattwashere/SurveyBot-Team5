@@ -1,0 +1,35 @@
+.comment {
+  background-color: white;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 1px black solid;
+  border-radius:20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.keys{
+  margin: .5em;
+  border: 2px solid black;
+  color: white;
+  background-color: green;
+  padding: .25em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+.tags{
+  margin: .5em;
+  border: 2px solid black;
+  color: white;
+  background-color: green;
+  padding: .25em;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}

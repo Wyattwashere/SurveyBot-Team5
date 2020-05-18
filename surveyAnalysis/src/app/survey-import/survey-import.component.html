@@ -1,0 +1,21 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="jquery.csv.js"></script> <!-- The "./" is not used here -->
+
+<div>
+      <div class='loadCSVInput'>
+        <p></p>
+        <h2>Import CSV Files</h2>
+        <div class='import'>
+          <p>Survey data csv</p>
+          <input type="file" multiple id="jsonFile" accept=".csv" (change)="importData($event.target.files)" />
+        </div>
+        <div class='import'>
+          <p>Survey questions csv</p>
+          <input type="file" multiple id="jsonFile" accept=".csv" (change)="importQuestions($event.target.files)" />
+        </div>
+      </div>
+      <div class='exportExcel'>
+        <button (click)="onClickMe($event)">Upload</button>
+      </div>
+
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="!loggedIn">
+  <script src="node_modules/rosefire/dist/js/rosefire-angular.min.js"></script>
+  <div >
+    <hr>
+    <p>
+      Please sign in using your Rose-Hulman Credentials
+    </p>
+  </div>
+  <button type="submit" (click)="login()">Sign In</button>
+</div>
+<div *ngIf="loggedIn"></div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <title>WorkingTitle</title>
+</head>
+
+<body>
+
+
+    <app-header></app-header>
+
+    <app-survey-import ></app-survey-import>
+    <app-survey-export ></app-survey-export>
+
+    <app-tag-form>Loading...</app-tag-form>
+
+      <div class='mainpane'>
+        <div class='row' >
+          <div class='card' id='visual' cdkDrag>
+            <!-- <img class="diagram" src="../assets/almayStockPhoto.jpg" alt="Stock photo word cloud" /> -->
+            <app-word-cloud [wordData]="data"></app-word-cloud>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='card'>
+            Comments:
+            <app-tag-drag-drop>
+            </app-tag-drag-drop>
+            <app-comment-drag-drop>
+              If you are seeing this, there are no comments!
+            </app-comment-drag-drop>
+
+          </div>
+        </div>
+    </div>
+
+
+    <div class="delSurvey">
+      <button class="delSurvButton" (click)="openModal('deleteSurvey')">Delete Survey</button>
+    </div>
+
+    <jw-modal id="deleteSurvey">
+      <form class="modal-content">
+        <div class="container">
+          <h1>Delete Survey</h1>
+          <p>Are you sure you want to delete this survey?</p>
+
+          <div class="clearfix">
+            <button type="button" class="cancelbtn" (click)="closeModal('deleteSurvey')">Cancel</button>
+            <button type="button" class="deletebtn" (click)="deleteSurvey()">Delete</button>
+          </div>
+        </div>
+      </form>
+    </jw-modal>
+
+    <script src="../js/jquery-3.1.1.js"></script>
+    <script src="../js/draggable.js"></script>
+</body>
+</html>
+
