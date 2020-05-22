@@ -1,0 +1,51 @@
+CREATE TABLE survey(
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	PRIMARY KEY(id)
+)
+
+CREATE TABLE tag(
+	id INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	PRIMARY KEY(id)
+)
+
+CREATE TABLE comment(
+	comment_id INT NOT NULL AUTO_INCREMENT,
+	survey_id INT NOT NULL, 
+	question VARCHAR(5000),
+	response VARCHAR(5000),
+	PRIMARY KEY(comment_id),
+	FOREIGN KEY (survey_id) 
+		REFERENCES survey(id)
+		ON DELETE CASCADE
+)
+
+CREATE TABLE comment_to_tag(
+	comment_id INT NOT NULL,
+	tag_id INT NOT NULL,
+	FOREIGN KEY (comment_id) 
+		REFERENCES comment(comment_id)
+		ON DELETE CASCADE,
+	FOREIGN KEY (tag_id) 
+		REFERENCES tag(id)
+		ON DELETE CASCADE)
+
+CREATE TABLE survey_to_tag(
+	survey_id INT NOT NULL,
+	tag_id INT NOT NULL,
+	FOREIGN KEY (survey_id) 
+		REFERENCES survey(id)
+		ON DELETE CASCADE,
+	FOREIGN KEY (tag_id) 
+		REFERENCES tag(id)
+		ON DELETE CASCADE
+)
+
+CREATE TABLE stopword(
+	survey_id INT NOT NULL,
+	name VARCHAR(50) NOT NULL,
+	FOREIGN KEY (survey_id) 
+		REFERENCES survey(survey_id)
+		ON DELETE CASCADE,
+)

@@ -1,0 +1,60 @@
+CREATE TABLE course_eval_pre (
+instructor_firstname varchar(50),
+instructor_lastname varchar(50),
+project varchar(50),
+course_code varchar(50),
+course_title varchar(50),
+course_uniqueid varchar(50),
+question_key varchar(50),
+enrollments int,
+respondents int,
+response_rate float,
+mean float,
+std float,
+value int,
+option_respondents float,
+option_response_rate float,
+comments varchar(5000),
+survey_id INT NOT NULL,
+id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(id),FOREIGN KEY (survey_id) REFERENCES survey(id) ON DELETE CASCADE);
+
+ALTER TABLE course_eval_pre
+ADD COLUMN comment_id INT AFTER comments;
+		
+CREATE TABLE question (
+question_key varchar(50) NOT NULL,
+question_type varchar(50) NOT NULL,
+question varchar(5000) NOT NULL,
+survey_id INT,
+FOREIGN KEY (survey_id) 
+		REFERENCES survey(id)
+		ON DELETE CASCADE);
+
+CREATE VIEW course_eval_view AS
+	SELECT course_eval_pre.instructor_firstname,
+		course_eval_pre.instructor_lastname,
+		course_eval_pre.project,
+		course_eval_pre.course_code,
+		course_eval_pre.course_title,
+		course_eval_pre.course_uniqueid,
+		question.question AS question,
+		question.question_type AS question_type,
+		course_eval_pre.enrollments,
+		course_eval_pre.respondents,
+		course_eval_pre.response_rate,
+		course_eval_pre.mean,
+		course_eval_pre.std,
+		course_eval_pre.value,
+		course_eval_pre.option_respondents,
+		course_eval_pre.option_response_rate,
+		course_eval_pre.comments,
+		course_eval_pre.id,
+		course_eval_pre.comment_id,
+		course_eval_pre.survey_id,
+		tag.name as tags
+	FROM ((((course_eval_pre
+		LEFT OUTER JOIN question ON course_eval_pre.question_key = question.question_key)
+		LEFT OUTER JOIN comment ON course_eval_pre.comment_id = comment.comment_id)
+		LEFT OUTER JOIN comment_to_tag ON comment.comment_id = comment_to_tag.comment_id)
+		LEFT OUTER JOIN tag ON comment_to_tag.tag_id = tag.id)
